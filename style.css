@@ -353,6 +353,14 @@ body {
   width: 7vw;
   background-color: white;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-container .skills .logo img{
+  height: 6.5vw;
+  width: 6.5vw;
+  border-radius: 50%;
 }
 .skill-container .skills > h3 {
   font-size: 2vw;
