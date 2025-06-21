@@ -241,13 +241,13 @@ body {
   flex-direction: column;
 }
 .education > h3 {
-  color: white;
+  color: white; 
   font-size: 5vw;
   padding-bottom: 45px;
 }
 .education .inner-education {
   width: 90%;
-  height: 60%;
+  height: 70%;
   background-color: #3480f3;
   display: flex;
   align-items: center;
@@ -269,7 +269,8 @@ body {
 }
 .education .inner-education .edu1,
 .education .inner-education .edu2,
-.education .inner-education .edu3 {
+.education .inner-education .edu3,
+.education .inner-education .edu4 {
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -357,7 +358,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.skill-container .skills .logo img{
+.skill-container .skills .logo img {
   height: 6.5vw;
   width: 6.5vw;
   border-radius: 50%;
