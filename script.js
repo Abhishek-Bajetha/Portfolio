@@ -1,3 +1,26 @@
+const loader = document.getElementById("loader");
+const h1 = document.createElement("h1");
+let count = 0;
+function loading() {
+  h1.textContent = `${count}%`;
+
+  loader.append(h1);
+  if (count === 100) {
+    setTimeout(() => {
+        loader.style.transform = "translateY(-100vh)";
+    }, 1000);
+    return;
+  }
+
+  count += Math.floor(Math.random() * 10);
+
+  if (count > 100) count = 100;
+
+  setTimeout(loading, Math.floor(Math.random() * 200) - 50);
+}
+
+loading();
+
 var tl = gsap.timeline();
 tl.from(".nav", {
   y: -100,
