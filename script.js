@@ -8,6 +8,7 @@ function loading() {
   if (count === 100) {
     setTimeout(() => {
         loader.style.transform = "translateY(-100vh)";
+        landingPage();
     }, 1000);
     return;
   }
@@ -20,32 +21,33 @@ function loading() {
 }
 
 loading();
-
-var tl = gsap.timeline();
-tl.from(".nav", {
+function landingPage() {
+  
+  var tl = gsap.timeline();
+  tl.from(".nav", {
   y: -100,
   duration: 0.5,
-  delay: 1,
+  delay: .5,
   opacity: 0,
 });
 tl.from(".nav-inner1", {
   y: -50,
-  duration: 0.2,
+  duration: 0.05,
   opacity: 0,
 });
 tl.from(".nav-inner2 h4", {
   y: -50,
-  stagger: 0.2,
+  stagger: 0.05,
   opacity: 0,
 });
 tl.from(".nav-inner3 .about", {
   y: -50,
-  stagger: 0.2,
+  stagger: 0.05,
   opacity: 0,
 });
 tl.from(".nav-inner3 .btncontainer .navbtn", {
   y: -50,
-  stagger: 0.2,
+  stagger: 0.05,
   opacity: 0,
 });
 tl.from(".myname #rightname", {
@@ -63,13 +65,14 @@ tl.from(".myname-inner .mynamebtn", {
   stagger: 0.2,
   opacity: 0,
 });
+}
 
 // ------------------------------------about-me---------------------------------------------
 
 gsap.from(".aboutme .aboutme-main", {
   rotate: 35,
   // x: 200,
-
+  
   opacity: 0,
   scrollTrigger: {
     trigger: ".aboutme",
