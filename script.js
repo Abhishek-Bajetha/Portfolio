@@ -1,70 +1,68 @@
+/* **----------------------loading-screen--------------------------------------------*/
 const loader = document.getElementById("loader");
 const h1 = document.createElement("h1");
 let count = 0;
 function loading() {
   h1.textContent = `${count}%`;
-
   loader.append(h1);
   if (count === 100) {
     setTimeout(() => {
-        loader.style.transform = "translateY(-100vh)";
-        landingPage();
+      loader.style.transform = "translateY(-100vh)";
+      landingPage();
     }, 1000);
     return;
   }
 
   count += Math.floor(Math.random() * 10);
-
   if (count > 100) count = 100;
-
   setTimeout(loading, Math.floor(Math.random() * 200) - 50);
 }
-
 loading();
+
+/* **----------------------landing-page-animation--------------------------------------------*/
 function landingPage() {
-  
   var tl = gsap.timeline();
   tl.from(".nav", {
-  y: -100,
-  duration: 0.5,
-  delay: .5,
-  opacity: 0,
-});
-tl.from(".nav-inner1", {
-  y: -50,
-  duration: 0.05,
-  opacity: 0,
-});
-tl.from(".nav-inner2 h4", {
-  y: -50,
-  stagger: 0.05,
-  opacity: 0,
-});
-tl.from(".nav-inner3 .about", {
-  y: -50,
-  stagger: 0.05,
-  opacity: 0,
-});
-tl.from(".nav-inner3 .btncontainer .navbtn", {
-  y: -50,
-  stagger: 0.05,
-  opacity: 0,
-});
-tl.from(".myname #rightname", {
-  x: 150,
-  stagger: 0.25,
-  opacity: 0,
-});
-tl.from(".myname .leftname", {
-  y: 50,
-  stagger: 0.2,
-  opacity: 0,
-});
-tl.from(".myname-inner .mynamebtn", {
-  y: 50,
-  stagger: 0.2,
-  opacity: 0,
-});
+    y: -100,
+    duration: 0.5,
+    delay: 0.5,
+    opacity: 0,
+  });
+  tl.from(".nav-inner1", {
+    y: -50,
+    duration: 0.05,
+    opacity: 0,
+  });
+  tl.from(".nav-inner2 h4", {
+    y: -50,
+    stagger: 0.05,
+    opacity: 0,
+  });
+  tl.from(".nav-inner3 .about", {
+    y: -50,
+    stagger: 0.05,
+    opacity: 0,
+  });
+  tl.from(".nav-inner3 .btncontainer .navbtn", {
+    y: -50,
+    stagger: 0.05,
+    opacity: 0,
+  });
+  tl.from(".myname #rightname", {
+    x: 150,
+    stagger: 0.25,
+    opacity: 0,
+  });
+  tl.from(".myname .leftname", {
+    y: 50,
+    stagger: 0.2,
+    opacity: 0,
+  });
+  tl.from(".myname-inner .mynamebtn", {
+    y: 50,
+    stagger: 0.2,
+    opacity: 0,
+  });
 }
 
 // ------------------------------------about-me---------------------------------------------
@@ -110,6 +108,16 @@ gsap.from(".aboutme .aboutme-main .right-aboutme", {
     end: "top 25%",
   },
 });
+
+const age = document.getElementById("age");
+const currtime = Date.now();
+const myBirthday = new Date(2003, 7, 27).getTime();
+let myAge = Math.floor((currtime - myBirthday) / (1000 * 60 * 60 * 24) / 365);
+
+age.textContent = `${myAge}`;
+console.log(typeof myAge);
+console.log(myAge);
+
 // -----------------------------------education----------------------------------------------------
 gsap.from(".education", {
   // duration: 1,
@@ -276,7 +284,7 @@ gsap.from(
     y: -50,
     stagger: 0.6,
     opacity: 0,
-    delay:.5,
+    delay: 0.5,
     scrollTrigger: {
       trigger: ".myblogs .blogcontent",
       scroller: "body",
